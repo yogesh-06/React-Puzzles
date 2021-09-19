@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @yograjput
+- 👋 Hi, I’m @yogesh
 - 👀 I’m interested in Programming
 - 🌱 I’m currently learning Web Developing
 - 💞️ I’m looking to collaborate on JavaScript
