@@ -15,12 +15,12 @@ const CheckboxExample = () => {
           <CheckBox
             checked={checked}
             icon={<DeleteIcon />}
-            checkedIcon={<SaveIcon />}
+            // checkedIcon={<SaveIcon />}
             onChange={(e) => setChecked(e.target.checked)}
             color="primary"
-            inputProps={{
-              "aria-label": "secondary checkbox",
-            }}
+            // inputProps={{
+            //   "aria-label": "secondary checkbox",
+            // }}
           />
         }
         label=" Testing Checkbox"

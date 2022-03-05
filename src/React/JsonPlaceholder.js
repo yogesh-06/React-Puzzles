@@ -32,11 +32,11 @@ const JsonPlaceholder = () => {
       <div className="row ms-3">
         {userData.map((userName) => {
           return (
-            <div class="card m-3 col-12 " style={{ width: "18rem" }}>
-              <div class="card-body">
-                <p class="card-text">{userName.posts[0].title}</p>
+            <div className="card m-3 col-12 " style={{ width: "18rem" }}>
+              <div className="card-body">
+                <p className="card-text">{userName.posts[0].title}</p>
               </div>
-              <h5 class="text-end card-title">{userName.name} </h5>
+              <h5 className="text-end card-title">{userName.name} </h5>
             </div>
           );
         })}
