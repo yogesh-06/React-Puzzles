@@ -1,5 +1,20 @@
 import React, { useState } from "react";
-const Pagination = ({ card }) => {
+import axios from "axios";
+import { useEffect } from "react/cjs/react.development";
+const Pagination = () => {
+  const [card, setCard] = useState([]);
+
+  useEffect(() => {
+    fetchCards();
+  }, []);
+
+  const fetchCards = async () => {
+    const result = await axios.get(
+      "https://jsonplaceholder.typicode.com/posts"
+    );
+    setCard(result.data);
+  };
+
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 10;
   const totalCards = card.length;
@@ -57,10 +72,10 @@ const Pagination = ({ card }) => {
     if (currentPage >= 5 && currentPage <= noOfPages - 3) {
       slice.push("...");
     }
-    console.log(slice, currentPage, pageNos, noOfPages);
+    // console.log(slice, currentPage, pageNos, noOfPages);
     return slice;
   };
-  console.log(currentPage, "currentPAge");
+  // console.log(currentPage, "currentPAge");
   return (
     <>
       <div className="row">
@@ -108,7 +123,7 @@ const Pagination = ({ card }) => {
                     disabled={number === "..." ? true : false}
                   >
                     {number}
-                    {console.log(number)}
+                    {/* {console.log(number)} */}
                   </button>
                 </li>
               </>

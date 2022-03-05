@@ -1,30 +1,36 @@
-import axios from "axios";
-import { useState } from "react";
-import { useEffect } from "react/cjs/react.development";
-import Pagination from "./Pagination/Pagination";
+import Header from "./Header";
+import Online from "./React/Online";
+import JsonPlaceholder from "./React/JsonPlaceholder";
+import ObjectRecursion from "./React/ObjectRecursion";
+import Pagination from "./React/Pagination";
+import QuizObject from "./React/QuizObject";
+import RoboHash from "./React/RoboHash";
+import TodoOrg from "./React/TodoOrg";
+import MaterialUI from "./React/MaterialUI";
 
 function App() {
-  const [card, setCard] = useState([]);
-
-  useEffect(() => {
-    fetchCards();
-  }, []);
-
-  const fetchCards = async () => {
-    const result = await axios.get(
-      "https://jsonplaceholder.typicode.com/posts"
-    );
-    setCard(result.data);
-    console.log(result.data);
-  };
-
   return (
     <>
+      <Header />
       <div className="container">
-        <Pagination card={card} />
+        <MaterialUI />
+        <hr />
+        <Pagination />
+        <hr />
+        <JsonPlaceholder />
+        <hr />
+        <ObjectRecursion />
+        <hr />
+        <QuizObject />
+        <hr />
+        <RoboHash />
+        <hr />
+        <TodoOrg />
+        <hr />
+        <Online />
+        <hr />{" "}
       </div>
     </>
   );
 }
-
 export default App;
